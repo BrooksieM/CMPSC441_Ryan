@@ -83,16 +83,15 @@ print(f"Armor: {armor}")
 # Expected output: 25
 def get_player_intelligence(data):
     """Return the player's intelligence stat."""
-    # YOUR CODE HERE
-    pass
+    player_intelligence = data["player"]["stats"]["intelligence"]
+    return player_intelligence["intelligence"]
 
 
 # TODO Task 2: Get the total number of health potions
 # Expected output: 3
 def get_health_potion_count(data):
     """Return the quantity of health potions in inventory."""
-    # YOUR CODE HERE
-    pass
+    return game_data["inventory"]["potions"]["Health Potion"]
 
 
 # TODO Task 3: Get a list of all active quest titles

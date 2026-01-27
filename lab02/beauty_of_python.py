@@ -7,7 +7,7 @@ from pathlib import Path
 import sys
 
 sys.path.append(str(Path(__file__).parents[1]))
-import lab01
+import lab01.lab01 as lab01
 
 # basics
 for i in [0, 1, 2, 3]:
