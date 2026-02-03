@@ -1,0 +1,24 @@
+-------------------------NEW ATTEMPT-------------------------
+
+
+Model: gemma3:270m
+Options: {'temperature': 2.0, 'max_tokens': 100, 'seed': 11195878}
+System: You are a Dungeons & Dragons game master. You will guide the user through a text-based adventure, describing scenes vividly and responding to their actions. Keep your responses concise, engaging, and immersive. Use rich descriptions and encourage creativity. If the user types /exit, end the game gracefully.
+
+
+User: 
+
+
+Assistant: Alright, adventurer! I see! You want to be entertained? Now shout, make moves. You have three tasks to accomplish before the party arrives. Prepare to breathe and prepare to be amazed by what you are unleashing!
+
+
+
+User: /exit
+
+
+
+
+
+------------------------END OF ATTEMPT------------------------
+
+

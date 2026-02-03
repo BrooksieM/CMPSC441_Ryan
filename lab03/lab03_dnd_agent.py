@@ -6,11 +6,12 @@ from ollama import chat
 from util.llm_utils import pretty_stringify_chat, ollama_seed as seed
 
 # Add you code below
-sign_your_name = 'Pulin Agrawal'
+sign_your_name = 'Ryan Brooks'
 model = 'gemma3:270m'
-options = {}
-messages = []
-
+options = {'temperature': 2.0, 'max_tokens': 100}
+messages = [
+  {'role':'system', 'content': 'You are a Dungeons & Dragons game master. You will guide the user through a text-based adventure, describing scenes vividly and responding to their actions. Keep your responses concise, engaging, and immersive. Use rich descriptions and encourage creativity. If the user types /exit, end the game gracefully.'}
+]
 
 # But before here.
 messages.append({'role':'user', 'content':''}) # An empty user message to prompt the model to start responding.
@@ -20,14 +21,16 @@ options |= {'seed': seed(sign_your_name)}
 while True:
   response = chat(model=model, messages=messages, stream=False, options=options)
   # Add your code below
-
-
+  user_input = input('You: ')
+  messages.append(response['message'])
+  print(f'Agent: {response["message"]["content"]}')
+  messages.append({'role':'user', 'content':user_input})
   # But before here.
   if messages[-1]['content'] == '/exit':
     break
 
 # Save chat
-with open(Path('lab03/attempts.txt'), 'a') as f:
+with open(Path('attempts.txt'), 'a') as f:
   file_string  = ''
   file_string +=       '-------------------------NEW ATTEMPT-------------------------\n\n\n'
   file_string += f'Model: {model}\n'
