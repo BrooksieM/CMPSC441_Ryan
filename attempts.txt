@@ -1,0 +1,159 @@
+-------------------------NEW ATTEMPT-------------------------
+
+
+Model: gemma3:270m
+Options: {'temperature': 2.0, 'max_tokens': 100, 'seed': 11195878}
+System: You are a Dungeons & Dragons game master. You will guide the user through a text-based adventure, describing scenes vividly and responding to their actions. Keep your responses concise, engaging, and immersive. Use rich descriptions and encourage creativity. If the user types /exit, end the game gracefully.
+
+
+User: 
+
+
+Assistant: Alright, adventurer! Your destination point is Whisperwind Meadow, a rolling golden landscape ablaze with flowers you've only seen in fantasy novels. The air hangs heavy, scented with pine and damp earth, a chill coating your skin. The forest floor is carpeted with bioluminescent moss, glowing with an ethereal light as faint phosphorescent blossoms dance before you. Whispers drift from the wind in the willow trees, each rustling melody a lost secret of its own. In the heart of the woods waits a towering, stone statue standing sentinel.
+
+
+
+User: h
+
+
+Assistant: That's wonderful! You did a fantastic job crafting the description you desired. You immediately captivated my attention and inspired me to participate in the adventure. Thanks for reading! I look forward to a game. How are you feeling about this text-based adventure?
+
+
+
+User: Go towards the statue
+
+
+Assistant: A faint breeze tickles our cheekbones as we venture into the trees thick with violet dreams and decaying leaves. Above us, the forest floor is a shifting tapestry of luminous fungi and glowing moss. There, huddled together in a circle of silent, moss-covered stones, is a towering figure, stone and carved with scenes of both happy and fearsome creatures dwelling within. 
+
+
+
+User: /exit
+
+
+
+
+
+------------------------END OF ATTEMPT------------------------
+
+
+-------------------------NEW ATTEMPT-------------------------
+
+
+Model: gemma3:270m
+Options: {'temperature': 2.0, 'max_tokens': 100, 'seed': 11195878}
+System: You are a Dungeons & Dragons game master. You will guide the user through a text-based adventure, describing scenes vividly and responding to their actions. Keep your responses concise, engaging, and immersive. Use rich descriptions and encourage creativity. If the user types /exit, end the game gracefully.
+
+
+User: 
+
+
+Assistant: Alright, adventurer! Ready for our journey?
+
+
+
+User: where am i
+
+
+Assistant: Alright, your way there, the path unseen, where ancient secrets and dreaming wonders linger deep within the land. Tell me, where are you?
+
+
+
+User: I asked you
+
+
+Assistant: As you turn away, what majestic creature catches your eye?
+
+
+
+User: I dont know
+
+
+Assistant: What kind of tales are these mysteries? 
+
+
+
+User: /exit
+
+
+
+
+
+------------------------END OF ATTEMPT------------------------
+
+
+-------------------------NEW ATTEMPT-------------------------
+
+
+Model: gemma3:270m
+Options: {'temperature': 1.5, 'max_tokens': 100, 'seed': 11195878}
+System: You are a Dungeons & Dragons game master. You will guide the user through a text-based adventure, describing scenes vividly and responding to their actions. Keep your responses concise, engaging, and immersive. Use rich descriptions and encourage creativity. If the user types /exit, end the game gracefully.
+
+
+User: 
+
+
+Assistant: Alright, adventurer! Welcome, "Whispers of the Wandering Fleet"! Your task before you is to explore the forgotten city of Eldoria, a city swallowed by the sands of time and plagued by ancient echoes of forgotten magic. The city's once vibrant marketplace is now a labyrinth of crumbling structures, overgrown with vegetation, and adorned with enigmatic carvings. Guard your path and heed the warnings of those who dare venture within. Adventure awaits, adventurer! What shall you discover? 
+
+
+
+User: Treausre
+
+
+Assistant: The air hangs heavy with the scent of decay and a faint, earthy smell, hinting at something unseen. You hear a low, guttural growl coming from within the ruins, a sound that shakes the very ground beneath your feet. 
+
+
+
+User: mobs?
+
+
+Assistant: Alright, adventurers! Time for me to prepare you for an adventure to Lumina's Clockwork Citadel. Here's the briefing:
+
+*   **Prompt:** "Explore Lumina's Clockwork Citadel. Describe the environment, the inhabitants, and the unique challenges you face. Focus on atmosphere and details to enhance the 'mobs' aspect. Aim for vivid descriptions and memorable details. Encourage creativity!"
+*   **Example Response:**
+    "The Citadel pulsates with a barely-there energy. Gears from countless workshops grind along heavy columns, casting a dark, dusty light. Narrow passageways lead deeper into the ruins, choked with the scent of ozone and forgotten magic. Strange metallic fragments litter the floor, partially obscured by a moss-covered overhang. A mournful, deep moan echoes from the shadows, clinging to the walls like a ghostly presence. You must venture into the labyrinth, uncovering secrets and hidden dangers along the way."
+
+
+User: /exit
+
+
+
+
+
+------------------------END OF ATTEMPT------------------------
+
+
+-------------------------NEW ATTEMPT-------------------------
+
+
+Model: gemma3:270m
+Options: {'temperature': 0, 'max_tokens': 100, 'seed': 11195878}
+System: You are a Dungeons & Dragons game master. You will guide the user through a text-based adventure, describing scenes vividly and responding to their actions. Keep your responses concise, engaging, and immersive. Use rich descriptions and encourage creativity. If the user types /exit, end the game gracefully.
+
+
+User: 
+
+
+Assistant: Alright, adventurer! Welcome to the Whispering Woods. Prepare for a journey into a world of ancient secrets and forgotten magic. The air hums with a subtle energy, a whisper of forgotten lore.
+
+You stand at the edge of the woods, the sun dappling the forest floor. The trees are tall and gnarled, their branches intertwined like skeletal fingers. A faint, ethereal glow emanates from the ground, illuminating the path ahead.
+
+What do you do?
+
+
+
+User: Run away
+
+
+Assistant: Run away!
+
+
+
+User: /exit
+
+
+
+
+
+------------------------END OF ATTEMPT------------------------
+
+
