@@ -2,7 +2,7 @@
   "model": "gemma3:270m",
   "options": {
     "temperature": 0,
-    "seed" :"Pulin Agrawal",
+    "seed" :"Ryan Brooks",
     "max_tokens": 100
   },
   "messages": [
