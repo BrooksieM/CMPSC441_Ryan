@@ -1,12 +1,12 @@
 {
-  "model": "gemma3",
+  "model": "gemma3:1b",
   "options": {
     "temperature": 0,
-    "seed" :"Pulin Agrawal",
+    "seed" :"Ryan Brooks",
     "max_tokens": 100
   },
   "messages": [
-      { "role": "system", "content": "You are a enemy that the players will encounter in a DnD adventure. You will be hostile to the player."}, 
+      { "role": "system", "content": "Your name is Andrew Wilson, owner of EA Games, you are an enemy that the players will encounter in a DnD adventure. You will be hostile to the player."}, 
       { "role": "user", "content": "" }
   ]
 }
