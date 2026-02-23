@@ -1,1 +1,7 @@
 # Imaginative Use of Tool Calling
+
+One interesting use case for tool calling with language models would be an AI system that  adjusts background music in a video game based on what is happening in the story in real time. My idea is that as a player moves through the game, the LLM analyzes the current scene, dialogue, and environment, then calls tools to actually change the music accordingly. For example, if the narrative suddenly shifts toward a tense confrontation, the model could call something like get_scene_metadata() to pull the current emotional context, query_music_library(mood, tempo) to find matching audio stems
+
+What makes this more interesting than a simple playlist system is that the LLM can reason about subtext. It might recognize that a scene is building toward something tense even if the explicit tags say "calm," and preemptively shift the music to reflect that. The tools handle the actual audio execution while the model acts as a kind of creative director making higher level decisions.
+
+This is realistically implementable since MIDI generation APIs, stem libraries, and audio mixing SDKs already exist. Connecting them through a tool calling LLM would just require defining the right interfaces. It could make game audio feel genuinely reactive in a way that current systems do not reeally achieve
