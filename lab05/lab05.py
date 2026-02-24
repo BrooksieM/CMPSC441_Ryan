@@ -26,6 +26,13 @@ def process_response(self, response):
     # Fill out this function to process the response from the LLM
     # and make the function call
     # Hint: check response.message.tool_calls and use process_function_call
+    
+    if response.message.tool_calls:
+        for tool_call in response.message.tool_calls:
+            tool_response = process_function_call(tool_call.function)
+            print(tool_response)
+    
+    
     return response
 
 run_console_chat(template_file='lab05/lab05_dice_template.json',
