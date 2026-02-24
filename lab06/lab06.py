@@ -86,7 +86,18 @@ def generate_character(description: str) -> CharacterSheet:
     Returns:
         A validated CharacterSheet instance
     """
-    pass
+    response = ollama.chat(
+        model=MODEL,
+        messages=[
+            {"role": "system", "content": "You are an assistant to generate a character for a DND game. "
+            "You will generate a character sheet in JSON format following the CharacterSheet schema."
+            "The character is a warrior who wields a zweihander, the character has a flaw of being greedy"},
+            {"role": "user", "content": description}
+        ],
+        format=CharacterSheet.model_json_schema()
+    )
+    character = CharacterSheet.model_validate_json(response.message.content)
+    return character
 
 
 def generate_monster(concept: str) -> MonsterStats:
@@ -103,7 +114,18 @@ def generate_monster(concept: str) -> MonsterStats:
     Returns:
         A validated MonsterStats instance
     """
-    pass
+    response = ollama.chat(
+        model=MODEL,
+        messages=[
+            {"role": "system", "content": "You are an assistant to generate a monster for a DND game. "
+            "You will generate monster stats in JSON format following the MonsterStats schema."
+            "The monster will be a mossy creature that can cloak themselves to the player. "},
+            {"role": "user", "content": concept}
+        ],
+        format=MonsterStats.model_json_schema()
+    )
+    monster = MonsterStats.model_validate_json(response.message.content)
+    return monster
 
 
 def generate_encounter(party_level: int, num_monsters: int, theme: str) -> Encounter:
@@ -128,7 +150,18 @@ def generate_encounter(party_level: int, num_monsters: int, theme: str) -> Encou
     Returns:
         A validated Encounter instance
     """
-    pass
+    response = ollama.chat(
+        model=MODEL,
+        messages=[
+            {"role": "system", "content": "You are an assistant to generate a DND encounter. "
+            "You will generate the encounter in JSON format following the Encounter schema."
+            "The encounter will be a forest ambush where the players are attacked by a pack of wolves."},
+            {"role": "user", "content": f"Generate an encounter for a party of level {party_level} with {num_monsters} monsters. The theme is: {theme}"}
+        ],
+        format=Encounter.model_json_schema()
+    )
+    encounter = Encounter.model_validate_json(response.message.content)
+    return encounter
 
 
 # ============================================================================
