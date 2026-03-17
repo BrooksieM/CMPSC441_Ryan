@@ -11,7 +11,7 @@ import ollama
 from pydantic import BaseModel, Field
 
 
-MODEL = "llama3.2:latest"
+MODEL = "gemma3:1b"
 
 
 # ============================================================================
@@ -89,9 +89,9 @@ def generate_character(description: str) -> CharacterSheet:
     response = ollama.chat(
         model=MODEL,
         messages=[
-            {"role": "system", "content": "You are an assistant to generate a character for a DND game. "
-            "You will generate a character sheet in JSON format following the CharacterSheet schema."
-            "The character is a warrior who wields a zweihander, the character has a flaw of being greedy"},
+            {"role": "system", "content": "You are a D&D character sheet generator. "
+            "Create a complete, valid D&D character based on the user's description. "
+            "Return the character as a JSON object following the CharacterSheet schema exactly."},
             {"role": "user", "content": description}
         ],
         format=CharacterSheet.model_json_schema()
@@ -117,9 +117,9 @@ def generate_monster(concept: str) -> MonsterStats:
     response = ollama.chat(
         model=MODEL,
         messages=[
-            {"role": "system", "content": "You are an assistant to generate a monster for a DND game. "
-            "You will generate monster stats in JSON format following the MonsterStats schema."
-            "The monster will be a mossy creature that can cloak themselves to the player. "},
+            {"role": "system", "content": "You are a D&D monster stat block generator. "
+            "Create a complete, valid D&D monster based on the user's concept. "
+            "Return the monster as a JSON object following the MonsterStats schema exactly."},
             {"role": "user", "content": concept}
         ],
         format=MonsterStats.model_json_schema()
@@ -153,9 +153,9 @@ def generate_encounter(party_level: int, num_monsters: int, theme: str) -> Encou
     response = ollama.chat(
         model=MODEL,
         messages=[
-            {"role": "system", "content": "You are an assistant to generate a DND encounter. "
-            "You will generate the encounter in JSON format following the Encounter schema."
-            "The encounter will be a forest ambush where the players are attacked by a pack of wolves."},
+            {"role": "system", "content": "You are a D&D encounter generator. "
+            "Create a complete, valid D&D encounter following the Encounter schema exactly. "
+            "The difficulty field must be exactly one of: Easy, Medium, Hard, or Deadly."},
             {"role": "user", "content": f"Generate an encounter for a party of level {party_level} with {num_monsters} monsters. The theme is: {theme}"}
         ],
         format=Encounter.model_json_schema()
