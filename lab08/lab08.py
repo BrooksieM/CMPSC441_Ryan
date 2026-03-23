@@ -37,13 +37,14 @@ class OllamaEmbeddingFunction:
     def __call__(self, input: List[str]) -> List[List[float]]:
         """
         Generate embeddings for a list of texts using Ollama.
-        
+
         Inputs:
             input (List[str]): List of text strings to embed.
         Outputs:
             List[List[float]]: List of embedding vectors, one per input string.
         """
-        pass
+        response = ollama.embed(model=self.model_name, input=input)
+        return response.embeddings
 
 
 def load_documents(data_dir: str) -> Dict[str, str]:
@@ -148,7 +149,7 @@ def setup_chroma_db(chunks: List[Dict[str, Any]], collection_name: str = "dnd_kn
 def retrieve_context(collection: chromadb.Collection, query: str, n_results: int = 3) -> List[str]:
     """
     Retrieve relevant context from ChromaDB based on the query.
-    
+
     Inputs:
         collection (chromadb.Collection): The ChromaDB collection to search.
         query (str): The user query string.
@@ -156,7 +157,8 @@ def retrieve_context(collection: chromadb.Collection, query: str, n_results: int
     Outputs:
         List[str]: List of retrieved context strings relevant to the query.
     """
-    pass
+    results = collection.query(query_texts=[query], n_results=n_results)
+    return results["documents"][0]
 
 
 
@@ -226,8 +228,8 @@ def main():
     """
     
     # Set embedding and LLM models
-    embedding_model = "nomic-embed-text"  # Change to your preferred embedding model
-    llm_model = "llama3.2:latest"  # Change to your preferred LLM model
+    embedding_model = "gemma3:1b"  # Change to your preferred embedding model
+    llm_model = "gemma3:1b"  # Change to your preferred LLM model
     
     # 1. Load documents
     data_dir = "lab08/data"

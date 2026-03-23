@@ -1,30 +1,4 @@
-# Lab 06: Structured Output with Pydantic and Ollama
-
-## Overview
-This lab demonstrates how to get structured, validated JSON output from LLMs using Pydantic models and Ollama's `format` parameter. Instead of parsing free-form text, you will define schemas that constrain the LLM to produce valid, typed data -- in this case, D&D character sheets, monster stat blocks, and encounters.
-
-## What is Structured Output?
-When using LLMs, responses are typically unstructured text. Structured output lets you define a JSON schema that the model must follow, ensuring:
-- **Type safety**: Fields have guaranteed types (int, str, list, etc.)
-- **Validation**: Constraints like min/max values are enforced
-- **Consistency**: Every response follows the same shape
-- **Parseability**: Output can be directly deserialized into objects
-
-## Key Concepts
-
-### Pydantic Models
-[Pydantic](https://docs.pydantic.dev/) is a Python library for data validation using type annotations. In this lab, Pydantic models define the schema for LLM output:
-- `Field(...)` with constraints like `ge=1, le=20` for numeric ranges
-- `min_length=1` for required string fields
-- Nested models for complex structures (e.g., `Encounter` contains `MonsterStats`)
-- `.model_json_schema()` generates a JSON Schema from the model
-- `.model_validate_json()` parses and validates a JSON string
-
-### Ollama's `format` Parameter
-The `ollama.chat()` function accepts a `format` parameter that constrains the LLM to produce JSON matching a given schema:
-```python
-response = ollama.chat(
-    model="llama3.2:latest",
+ 
     messages=[...],
     format=MyModel.model_json_schema()
 )
