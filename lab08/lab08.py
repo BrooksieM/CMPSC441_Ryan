@@ -11,7 +11,7 @@ from typing import List, Dict, Any
 
 # Vector database, embedding, and text processing
 import chromadb
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 
 import ollama
@@ -45,6 +45,9 @@ class OllamaEmbeddingFunction:
         """
         response = ollama.embed(model=self.model_name, input=input)
         return response.embeddings
+
+    def embed_query(self, input: List[str]) -> List[List[float]]:
+        return self(input)
 
 
 def load_documents(data_dir: str) -> Dict[str, str]:
@@ -191,7 +194,7 @@ def generate_response(query: str, contexts: List[str], model: str = "mistral:lat
         prompt=prompt,
     )
     
-    return response["response"]
+    return response.response
 
 
 def display_results(query: str, contexts: List[str], response: str) -> None:
@@ -228,7 +231,7 @@ def main():
     """
     
     # Set embedding and LLM models
-    embedding_model = "gemma3:1b"  # Change to your preferred embedding model
+    embedding_model = "nomic-embed-text"  # Change to your preferred embedding model
     llm_model = "gemma3:1b"  # Change to your preferred LLM model
     
     # 1. Load documents
