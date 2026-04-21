@@ -231,8 +231,8 @@ def main():
     """
     
     # Set embedding and LLM models
-    embedding_model = "nomic-embed-text"  # Change to your preferred embedding model
-    llm_model = "gemma3:1b"  # Change to your preferred LLM model
+    embedding_model = "nomic-embed-text"
+    llm_model = "gemma3:1b" 
     
     # 1. Load documents
     data_dir = "lab08/data"
