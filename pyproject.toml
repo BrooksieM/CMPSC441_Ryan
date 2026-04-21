@@ -3,7 +3,7 @@ name = "spring2025-labs"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.14"
+requires-python = "==3.13"
 dependencies = [
 <<<<<<< HEAD
     "chromadb==0.5",
@@ -29,5 +29,6 @@ members = [
     "pytest>=9.0.2",
     "uvicorn>=0.23.0",
     "fastmcp>=3.2.0",
+    "gymnasium[box2d]>=1.2.3",
 >>>>>>> 99e3d324e9059ba0704ed69fe328f10c48c59a53
 ]
