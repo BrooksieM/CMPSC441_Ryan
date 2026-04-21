@@ -14,6 +14,7 @@ from collections import defaultdict
 
 import gymnasium as gym
 from tqdm import tqdm
+import random
 
 # Hyperparameters
 NUM_EPISODES = 5000
@@ -36,6 +37,7 @@ returns_count = defaultdict(int)
 def choose_action(state, action_space, epsilon):
     """Select an action using an epsilon-greedy policy over Q.
 
+    
     TODO (student):
         With probability `epsilon`, return a random action sampled from
         `action_space` (exploration) as shown in return.
@@ -44,13 +46,23 @@ def choose_action(state, action_space, epsilon):
         zeros. When `epsilon == 0.0` this function must act greedily;
         measurement mode relies on that.
     """
-    # TODO: replace this line with your epsilon-greedy implementation.
-    return action_space.sample()
+    if random.random() < epsilon:
+        return action_space.sample()
+    
+    q_values = []
+    for s in range(action_space.n):
+        q_values.append(Q[state, a])
+
+    max_q = max(q_values)
+
+    ba = [a for a, q in enumerate(q_values) if q == max_q]
+
+    return random.choice(ba)
 
 
 def update_from_episode(episode):
     """First-visit Monte Carlo update from one full episode.
-
+    
     `episode` is a list of (state, action, reward) tuples in time order.
 
     TODO (student):
@@ -61,7 +73,7 @@ def update_from_episode(episode):
                returns_count[(s, a)] += 1
                Q[(s, a)] += (G - Q[(s, a)]) / returns_count[(s, a)]
     """
-    # TODO: implement the first-visit MC update.
+    G = 0
     pass
 
 
